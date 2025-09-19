@@ -8,90 +8,87 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
 
-    body {
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
+    body { background: #f9f9f9; color: #333; line-height: 1.6; }
 
+    /* HEADER / HERO */
     header {
-      background: #2c3e50;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216') no-repeat center center/cover;
       color: #fff;
       text-align: center;
-      padding: 40px 20px;
+      padding: 100px 20px;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+    header h1 { font-size: 3rem; margin-bottom: 15px; }
+    header p { font-size: 1.2rem; margin-bottom: 20px; }
 
-    header p {
-      font-size: 1.2rem;
-      color: #ddd;
-    }
-
-    nav {
-      margin-top: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #f1c40f;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      color: #2c3e50;
-      margin-bottom: 20px;
-      border-left: 5px solid #f1c40f;
-      padding-left: 10px;
-    }
-
-    section p, ul {
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
+    nav { margin-top: 20px; }
+    nav a { text-decoration: none; color: #fff; margin: 0 15px; font-weight: 500; transition: color 0.3s; }
+    nav a:hover { color: #f1c40f; }
 
     .btn {
       display: inline-block;
-      background: #2c3e50;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
       background: #f1c40f;
       color: #000;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
     }
+    .btn:hover { background: #fff; color: #2c3e50; }
 
+    /* SECTIONS */
+    section { max-width: 1100px; margin: auto; padding: 60px 20px; }
+    section h2 { font-size: 2rem; margin-bottom: 20px; color: #2c3e50; border-left: 5px solid #f1c40f; padding-left: 10px; }
+    section p, ul { font-size: 1.1rem; margin-bottom: 20px; }
+
+    ul li { margin-bottom: 10px; }
+
+    /* SERVICES GRID */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-5px); }
+
+    /* CONTACT FORM */
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      width: 100%;
+      background: #2c3e50;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    form button:hover { background: #f1c40f; color: #000; }
+
+    /* FOOTER */
     footer {
       background: #2c3e50;
       color: #fff;
@@ -99,15 +96,12 @@
       padding: 20px;
       margin-top: 30px;
     }
-
-    footer p {
-      font-size: 0.9rem;
-    }
+    footer p { font-size: 0.9rem; }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HERO -->
   <header>
     <h1>Eddie Gravalese</h1>
     <p>Finance & Real Estate Expert | Entrepreneur | Consultant</p>
@@ -117,6 +111,8 @@
       <a href="#values">Values</a>
       <a href="#contact">Contact</a>
     </nav>
+    <br>
+    <a href="#contact" class="btn">Work With Me</a>
   </header>
 
   <!-- ABOUT -->
@@ -133,12 +129,20 @@
   <!-- SERVICES -->
   <section id="services">
     <h2>My Services</h2>
-    <ul>
-      <li><strong>Flexible Financing:</strong> Short-term loans, fix-and-flip funding, and bridge financing through GLM Gravalese Realty LLC.</li>
-      <li><strong>Business Consulting:</strong> Strategic growth planning and consulting via Edge Consultant.</li>
-      <li><strong>Community Real Estate:</strong> Affordable, well-managed housing investments with Gravalese Realty Inc.</li>
-    </ul>
-    <a href="#contact" class="btn">Request a Consultation</a>
+    <div class="services">
+      <div class="service-card">
+        <h3>Flexible Financing</h3>
+        <p>Short-term loans, fix-and-flip funding, and bridge financing through GLM Gravalese Realty LLC.</p>
+      </div>
+      <div class="service-card">
+        <h3>Business Consulting</h3>
+        <p>Strategic growth planning and consulting via Edge Consultant for startups and entrepreneurs.</p>
+      </div>
+      <div class="service-card">
+        <h3>Community Real Estate</h3>
+        <p>Affordable, well-managed housing investments with Gravalese Realty Inc. focused on community growth.</p>
+      </div>
+    </div>
   </section>
 
   <!-- VALUES -->
@@ -155,11 +159,17 @@
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <p>If you’d like to connect for consulting, real estate solutions, or financing partnerships, feel free to reach out.</p>
+    <p>Let’s connect for consulting, real estate solutions, or financing partnerships.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <br>
     <p><strong>📍 Address:</strong> 89 Locksley Rd, Lynnfield, MA, USA</p>
     <p><strong>📞 Phone:</strong> +1 (323) 553-0000</p>
     <p><strong>📧 Email:</strong> eddie@eddiegravalese.com</p>
-    <a href="mailto:eddie@eddiegravalese.com" class="btn">Email Me</a>
   </section>
 
   <!-- FOOTER -->
