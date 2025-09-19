@@ -13,77 +13,70 @@
   <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg">
   <meta property="og:type" content="website">
 
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f6f8;
-      color: #333;
-      line-height: 1.6;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    a {
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+  <style>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.7; color: #333; background: #f4f6f8; scroll-behavior: smooth; }
+    a { text-decoration: none; transition: 0.3s; }
+    ul { list-style: none; }
 
     /* Header */
     header {
-      background: #1a2537;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: rgba(26,37,55,0.95);
       color: #fff;
-      padding: 20px 40px;
+      z-index: 1000;
+      padding: 15px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
-    .header-left {
+    .header-left { display: flex; align-items: center; }
+    header img { height: 55px; margin-right: 15px; border-radius: 8px; }
+    header h1 { font-size: 1.6rem; font-weight: 700; }
+    nav a { margin-left: 25px; font-weight: 500; color: #fff; }
+    nav a:hover { color: #ffcc00; }
+
+    /* Hero Section */
+    #hero {
+      background: url('https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg') no-repeat center/cover;
+      height: 100vh;
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
     }
-    header img {
-      height: 60px;
-      margin-right: 15px;
-      border-radius: 8px;
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.55);
     }
-    header h1 {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin: 0;
-    }
-    nav a {
-      color: white;
-      margin-left: 20px;
-      font-weight: 600;
-    }
-    nav a:hover {
-      color: #ffcc00;
-    }
+    #hero-content { position: relative; z-index: 1; max-width: 900px; }
+    #hero h2 { font-size: 3rem; margin-bottom: 20px; font-weight: 700; }
+    #hero p { font-size: 1.3rem; margin-bottom: 30px; }
+    #hero a { background: #ffcc00; color: #1a2537; padding: 12px 28px; border-radius: 6px; font-weight: 600; transition: 0.3s; }
+    #hero a:hover { background: #e6b800; }
 
     /* Sections */
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    section h2 {
-      color: #1a2537;
-      margin-bottom: 25px;
-      border-bottom: 4px solid #ffcc00;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
+    section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+    section h2 { font-size: 2rem; color: #1a2537; margin-bottom: 40px; border-bottom: 4px solid #ffcc00; display: inline-block; padding-bottom: 6px; }
 
     /* About */
-    #about p {
-      font-size: 1.1rem;
-    }
+    #about p { font-size: 1.1rem; max-width: 900px; margin: auto; text-align: center; }
 
     /* Services */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
       margin-top: 25px;
     }
@@ -91,53 +84,33 @@
       background: #fff;
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
-    .service-card h3 {
-      margin-bottom: 12px;
-      color: #1a2537;
-    }
+    .service-card h3 { margin-bottom: 15px; color: #1a2537; }
 
-    /* Press Release */
-    #press a {
+    /* Press Release & Blogs */
+    #press a, #blogs a {
       display: inline-block;
-      margin-top: 15px;
-      padding: 12px 22px;
       background: #1a2537;
       color: #fff;
+      padding: 10px 18px;
       border-radius: 6px;
+      margin-top: 10px;
       font-weight: 600;
     }
-    #press a:hover {
-      background: #ffcc00;
-      color: #1a2537;
-    }
+    #press a:hover, #blogs a:hover { background: #ffcc00; color: #1a2537; }
 
-    /* Blogs */
-    #blogs ul {
-      list-style: none;
-      padding: 0;
-    }
-    #blogs li {
-      margin-bottom: 15px;
-    }
-    #blogs a {
-      color: #1a2537;
-      font-weight: 600;
-    }
-    #blogs a:hover {
-      color: #ffcc00;
-    }
+    #blogs ul, #profiles ul { padding: 0; }
+    #blogs li { margin-bottom: 12px; }
+    #blogs a:hover { color: #ffcc00; }
 
-    /* Profiles & Listings */
+    /* Profiles */
     #profiles ul {
-      list-style: none;
-      padding: 0;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 15px;
@@ -148,10 +121,11 @@
       padding: 12px;
       border-radius: 8px;
       text-align: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       font-size: 0.95rem;
       font-weight: 500;
       color: #1a2537;
+      transition: 0.3s;
     }
     #profiles li a:hover {
       background: #ffcc00;
@@ -159,31 +133,35 @@
     }
 
     /* Contact */
-    #contact p {
-      margin: 10px 0;
-    }
+    #contact p { margin: 10px 0; }
+    #contact a { color: #1a2537; font-weight: 600; }
+    #contact a:hover { color: #ffcc00; }
 
     /* Footer */
     footer {
       background: #1a2537;
       color: white;
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px;
       font-size: 0.9rem;
     }
-    footer a {
-      color: #ffcc00;
-    }
+    footer a { color: #ffcc00; }
+
+    /* Smooth animation on scroll */
+    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-in-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header>
     <div class="header-left">
-      <img src="https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg/:/cr=t:19.35%25,l:0%25,w:100%25,h:61.3%25/rs=w:1177,h:1569,cg:true" alt="Eddie Gravalese Logo">
+      <img src="https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg" alt="Eddie Gravalese Logo">
       <h1>Eddie Gravalese</h1>
     </div>
     <nav>
+      <a href="#hero">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#press">Press</a>
@@ -193,14 +171,23 @@
     </nav>
   </header>
 
+  <!-- Hero Section -->
+  <section id="hero">
+    <div id="hero-content">
+      <h2>Empowering Entrepreneurs, Investors & Businesses</h2>
+      <p>Financial & Real Estate Expertise with 20+ Years of Proven Results</p>
+      <a href="#contact">Get in Touch</a>
+    </div>
+  </section>
+
   <!-- About -->
-  <section id="about">
+  <section id="about" class="fade-in">
     <h2>About Me</h2>
-    <p>I’m Eddie Gravalese, a finance and real estate expert with 20+ years of experience. I help entrepreneurs, investors, and professionals achieve sustainable growth through ethical and community-driven strategies. Founder of Edge Consultant, Gravalese Realty Inc., and GLM Gravalese Realty LLC, I provide tailored financial planning, real estate solutions, and business advisory services.</p>
+    <p>I’m Eddie Gravalese, a finance and real estate expert with 20+ years of experience. I help entrepreneurs, investors, and professionals achieve sustainable growth through ethical, community-driven strategies. Founder of Edge Consultant, Gravalese Realty Inc., and GLM Gravalese Realty LLC, I provide tailored financial planning, real estate solutions, and business advisory services.</p>
   </section>
 
   <!-- Services -->
-  <section id="services">
+  <section id="services" class="fade-in">
     <h2>Services</h2>
     <div class="services-grid">
       <div class="service-card">
@@ -223,18 +210,17 @@
   </section>
 
   <!-- Press Release -->
-  <section id="press">
+  <section id="press" class="fade-in">
     <h2>Press Release</h2>
     <p>Stay updated with the latest news and insights:</p>
     <a href="https://github.com/eddiegravalese/Eddie-Gravalese/releases/tag/v1.0.0" target="_blank">View Press Release</a>
   </section>
 
-  <!-- Blogs & Articles -->
-  <section id="blogs">
+  <!-- Blogs -->
+  <section id="blogs" class="fade-in">
     <h2>Blogs & Articles</h2>
     <ul>
-      <li><a href="https://eddiegravalese.wordpress.com/2025/06/20/is-eddie-gravalese-the-finance-consultant-you-need-to-know-about/" target="_blank">Is Eddie Gravalese the Finance Consultant You Need to Know About?</a></li>
-      <li><a href="https://eddiegravalesee.blogspot.com/2025/06/what-makes-eddie-gravalese-trusted.html" target="_blank">What Makes Eddie Gravalese Trusted?</a></li>
+      <li><a href="https://eddiegravalese.wordpress.com/2025/06/20/is-eddie-gravalese-the-finance-consultant-you-need-to-know-about/" target="_blank">Is Eddie Gravalese the Finance Consultant You Need?</a></li>
       <li><a href="https://vocal.media/journal/how-to-become-a-business-consultant-a-practical-guide-inspired-by-eddie-gravalese" target="_blank">How to Become a Business Consultant – Practical Guide</a></li>
       <li><a href="https://medium.com/@eddiegravalesee/how-much-do-real-estate-consultants-charge-insights-from-eddie-gravalese-31411c6dc8d8" target="_blank">Real Estate Consultant Fees Explained</a></li>
       <li><a href="https://techbullion.com/eddie-gravalese-guiding-businesses-toward-strategic-growth/" target="_blank">Guiding Businesses Toward Strategic Growth</a></li>
@@ -242,7 +228,7 @@
   </section>
 
   <!-- Profiles & Listings -->
-  <section id="profiles">
+  <section id="profiles" class="fade-in">
     <h2>Profiles & Business Listings</h2>
     <ul>
       <li><a href="https://about.me/eddiegravalese" target="_blank">About.me</a></li>
@@ -259,7 +245,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="fade-in">
     <h2>Contact</h2>
     <p><strong>Email:</strong> <a href="mailto:info@eddiegravalese.com">info@eddiegravalese.com</a></p>
     <p><strong>Website:</strong> <a href="https://eddiegravalese.com" target="_blank">eddiegravalese.com</a></p>
@@ -270,5 +256,19 @@
   <footer>
     <p>© 2025 Eddie Gravalese | All Rights Reserved | <a href="https://eddiegravalese.com" target="_blank">Official Website</a></p>
   </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
 </body>
 </html>
