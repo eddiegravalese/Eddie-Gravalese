@@ -1,267 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eddie Gravalese | Finance & Real Estate Consultant</title>
-  <meta name="description" content="Official website of Eddie Gravalese, finance and real estate expert with 20+ years of experience. Offering financial planning, real estate consulting, and business advisory services.">
-  <meta name="author" content="Eddie Gravalese">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eddie Gravalese | Finance & Real Estate Consultant</title>
+<meta name="description" content="Official website of Eddie Gravalese, finance and real estate expert with 20+ years of experience. Offering financial planning, real estate consulting, and business advisory services.">
+<meta name="author" content="Eddie Gravalese">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Eddie Gravalese | Finance & Real Estate Consultant">
-  <meta property="og:description" content="Finance & real estate solutions by Eddie Gravalese. Helping entrepreneurs, investors, and professionals with growth strategies.">
-  <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg">
-  <meta property="og:type" content="website">
+<!-- Open Graph -->
+<meta property="og:title" content="Eddie Gravalese | Finance & Real Estate Consultant">
+<meta property="og:description" content="Finance & real estate solutions by Eddie Gravalese. Helping entrepreneurs, investors, and professionals with growth strategies.">
+<meta property="og:image" content="https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg">
+<meta property="og:type" content="website">
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Roboto',sans-serif;background:#f4f6f8;color:#333;scroll-behavior:smooth;}
-    a{text-decoration:none;transition:0.3s;}
-    ul{list-style:none;}
-
-    /* Header */
-    header{position:fixed;top:0;width:100%;background:rgba(26,37,55,0.95);color:#fff;z-index:1000;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 10px rgba(0,0,0,0.1);}
-    .header-left{display:flex;align-items:center;}
-    header img{height:55px;margin-right:15px;border-radius:8px;}
-    header h1{font-size:1.6rem;font-weight:700;}
-    nav a{margin-left:25px;font-weight:500;color:#fff;}
-    nav a:hover{color:#ffcc00;}
-
-    /* Hero Slider */
-    #hero{position:relative;height:100vh;overflow:hidden;}
-    .slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;transition:opacity 1s ease-in-out;opacity:0;}
-    .slide.active{opacity:1;}
-    .slide-content{position:relative;z-index:1;max-width:900px;}
-    .slide h2{font-size:3rem;font-weight:700;margin-bottom:20px;text-shadow:2px 2px 8px rgba(0,0,0,0.5);}
-    .slide p{font-size:1.3rem;margin-bottom:30px;text-shadow:1px 1px 6px rgba(0,0,0,0.5);}
-    .slide a{background:#ffcc00;color:#1a2537;padding:12px 28px;border-radius:6px;font-weight:600;}
-    .slide a:hover{background:#e6b800;}
-    .slider-nav{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;gap:10px;}
-    .slider-nav button{width:15px;height:15px;border-radius:50%;border:none;background:#fff;opacity:0.5;cursor:pointer;}
-    .slider-nav button.active{opacity:1;background:#ffcc00;}
-
-    /* Sections */
-    section{padding:80px 20px;max-width:1200px;margin:auto;}
-    section h2{font-size:2rem;color:#1a2537;margin-bottom:40px;border-bottom:4px solid #ffcc00;display:inline-block;padding-bottom:6px;}
-
-    /* About */
-    #about p{font-size:1.1rem;max-width:900px;margin:auto;text-align:center;}
-
-    /* Services Slider */
-    .services-slider{display:flex;overflow-x:auto;gap:20px;scroll-behavior:smooth;padding-bottom:10px;}
-    .service-card{min-width:280px;background:#fff;padding:30px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);transition:transform 0.3s,box-shadow 0.3s;}
-    .service-card:hover{transform:translateY(-10px);box-shadow:0 12px 30px rgba(0,0,0,0.15);}
-    .service-card h3{margin-bottom:15px;color:#1a2537;}
-    .service-card p{font-size:1rem;}
-
-    /* Press & Blogs */
-    #press a,#blogs a{display:inline-block;background:#1a2537;color:#fff;padding:10px 18px;border-radius:6px;margin-top:10px;font-weight:600;}
-    #press a:hover,#blogs a:hover{background:#ffcc00;color:#1a2537;}
-    #blogs ul li{margin-bottom:12px;}
-    #blogs a:hover{color:#ffcc00;}
-
-    /* Profiles */
-    #profiles ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;}
-    #profiles li a{background:#fff;display:block;padding:12px;border-radius:8px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,0.08);font-size:0.95rem;font-weight:500;color:#1a2537;transition:0.3s;}
-    #profiles li a:hover{background:#ffcc00;color:#1a2537;}
-
-    /* Testimonials */
-    #testimonials{background:#fff8e6;padding:80px 20px;}
-    .testimonial-slider{display:flex;overflow-x:auto;gap:25px;scroll-behavior:smooth;padding-bottom:10px;}
-    .testimonial-card{min-width:300px;background:#fff;padding:25px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);}
-    .testimonial-card p{font-style:italic;margin-bottom:10px;}
-    .testimonial-card h4{color:#1a2537;}
-
-    /* Contact */
-    #contact p{margin:10px 0;}
-    #contact a{color:#1a2537;font-weight:600;}
-    #contact a:hover{color:#ffcc00;}
-
-    /* Footer */
-    footer{background:#1a2537;color:white;text-align:center;padding:40px 20px;font-size:0.9rem;}
-    footer a{color:#ffcc00;}
-
-    /* Fade-in scroll */
-    .fade-in{opacity:0;transform:translateY(30px);transition:all 0.8s ease-in-out;}
-    .fade-in.visible{opacity:1;transform:translateY(0);}
-  </style>
+<style>
+  body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0; background:#f9fafc; color:#333;}
+  header {background:#1a2537; color:white; padding:15px 30px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap;}
+  header img {height:55px; margin-right:15px; border-radius:8px;}
+  header h1 {margin:0; font-size:1.6rem;}
+  nav a {color:white; margin:0 12px; text-decoration:none; font-weight:bold; transition:color 0.3s;}
+  nav a:hover {color:#ffcc00;}
+  section {padding:60px 20px; max-width:1100px; margin:auto;}
+  section h2 {color:#1a2537; margin-bottom:20px; border-bottom:3px solid #ffcc00; display:inline-block; padding-bottom:5px;}
+  /* Hero Slider */
+  .hero {position:relative; overflow:hidden; border-radius:10px; margin-bottom:40px;}
+  .slide {display:none; padding:60px 30px; text-align:center; background:#ffcc00; color:#1a2537; font-size:1.3rem;}
+  .slide.active {display:block;}
+  .slider-nav {text-align:center; margin-top:15px;}
+  .slider-nav button {padding:5px 12px; margin:0 3px; border:none; border-radius:4px; cursor:pointer;}
+  .slider-nav button.active {background:#1a2537; color:white;}
+  /* Services */
+  .services-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:20px;}
+  .service-card {background:#fff; padding:25px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.08); transition:transform 0.3s;}
+  .service-card:hover {transform:translateY(-5px);}
+  .service-card h3 {margin-bottom:10px;}
+  /* Blogs & Profiles */
+  ul {list-style:none; padding-left:0;}
+  ul li {margin-bottom:12px;}
+  a {text-decoration:none; color:#1a2537;}
+  a:hover {color:#ffcc00;}
+  /* Testimonials */
+  .testimonial-slider {display:flex; overflow-x:auto; gap:20px; scroll-behavior:smooth; margin-top:20px;}
+  .testimonial-card {min-width:250px; background:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.08);}
+  /* Contact */
+  #contact p {margin:8px 0;}
+  /* Footer */
+  footer {background:#1a2537; color:white; text-align:center; padding:25px; font-size:0.9rem;}
+  footer a {color:#ffcc00;}
+  /* Fade-in animation */
+  .fade-in {opacity:0; transform:translateY(20px); transition:all 1s;}
+  .fade-in.visible {opacity:1; transform:translateY(0);}
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-left">
-      <img src="https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg" alt="Eddie Gravalese Logo">
-      <h1>Eddie Gravalese</h1>
-    </div>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#press">Press</a>
-      <a href="#blogs">Blogs</a>
-      <a href="#profiles">Profiles</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<!-- Header -->
+<header>
+  <div class="header-left">
+    <img src="https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg" alt="Eddie Gravalese Logo">
+    <h1>Eddie Gravalese</h1>
+  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#blogs">Blogs</a>
+    <a href="#profiles">Profiles</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- Hero Slider -->
-  <section id="hero">
-    <div class="slide active" style="background-image:url('https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg')">
-      <div class="slide-content">
-        <h2>Empowering Entrepreneurs & Investors</h2>
-        <p>Financial & Real Estate Expertise with 20+ Years of Proven Results</p>
-        <a href="#contact">Get in Touch</a>
-      </div>
-    </div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1556742400-b5c9f4e37217?auto=format&fit=crop&w=1950&q=80')">
-      <div class="slide-content">
-        <h2>Strategic Financial Planning</h2>
-        <p>Customized strategies to optimize growth and minimize risk.</p>
-        <a href="#services">Explore Services</a>
-      </div>
-    </div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1605902711622-cfb43c4435d4?auto=format&fit=crop&w=1950&q=80')">
-      <div class="slide-content">
-        <h2>Business Growth Advisory</h2>
-        <p>Expert guidance to scale operations and build sustainable businesses.</p>
-        <a href="#contact">Consult Now</a>
-      </div>
-    </div>
-    <div class="slider-nav">
-      <button class="active"></button>
-      <button></button>
-      <button></button>
-    </div>
-  </section>
+<!-- Hero Slider -->
+<section class="hero">
+  <div class="slide active">Helping Entrepreneurs & Investors Achieve Financial Growth</div>
+  <div class="slide">Strategic Real Estate Consulting & Business Advisory Services</div>
+  <div class="slide">Tailored Financial Planning to Maximize Your Potential</div>
+  <div class="slider-nav">
+    <button class="active"></button>
+    <button></button>
+    <button></button>
+  </div>
+</section>
 
-  <!-- About -->
-  <section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>I’m Eddie Gravalese, a finance and real estate expert with 20+ years of experience. I help entrepreneurs, investors, and professionals achieve sustainable growth through ethical, community-driven strategies. Founder of Edge Consultant, Gravalese Realty Inc., and GLM Gravalese Realty LLC, I provide tailored financial planning, real estate solutions, and business advisory services.</p>
-  </section>
+<!-- About -->
+<section id="about" class="fade-in">
+  <h2>About Me</h2>
+  <p>I’m Eddie Gravalese, a finance and real estate expert with over 20 years of experience. Founder of Edge Consultant, Gravalese Realty Inc., and GLM Gravalese Realty LLC. I help entrepreneurs, investors, and professionals achieve sustainable growth through financial planning, real estate solutions, and strategic business consulting.</p>
+</section>
 
-  <!-- Services -->
-  <section id="services" class="fade-in">
-    <h2>Services</h2>
-    <div class="services-slider">
-      <div class="service-card">
-        <h3>📊 Strategic Financial Planning</h3>
-        <p>Custom strategies to optimize investments, reduce risks, and achieve long-term business goals.</p>
-      </div>
-      <div class="service-card">
-        <h3>🏡 Real Estate Consulting</h3>
-        <p>Guidance for developers, entrepreneurs, and investors on property acquisition, development, and management.</p>
-      </div>
-      <div class="service-card">
-        <h3>💰 Flexible Lending Solutions</h3>
-        <p>Access to financing tailored for startups, property investments, and business expansion.</p>
-      </div>
-      <div class="service-card">
-        <h3>📈 Business Growth Advisory</h3>
-        <p>Support for scaling operations, improving cash flow, and building sustainable businesses.</p>
-      </div>
-    </div>
-  </section>
+<!-- Services -->
+<section id="services" class="fade-in">
+  <h2>Services</h2>
+  <div class="services-grid">
+    <div class="service-card"><h3>📊 Strategic Financial Planning</h3><p>Optimize investments, reduce risks, and achieve long-term business goals.</p></div>
+    <div class="service-card"><h3>🏡 Real Estate Consulting</h3><p>Guidance on property acquisition, development, and management.</p></div>
+    <div class="service-card"><h3>💰 Flexible Lending Solutions</h3><p>Access financing for startups, property investments, and business expansion.</p></div>
+    <div class="service-card"><h3>📈 Business Growth Advisory</h3><p>Scale operations, improve cash flow, and build sustainable businesses.</p></div>
+  </div>
+</section>
 
-  <!-- Press -->
-  <section id="press" class="fade-in">
-    <h2>Press Release</h2>
-    <p>Stay updated with the latest news and insights:</p>
-    <a href="https://github.com/eddiegravalese/Eddie-Gravalese/releases/tag/v1.0.0" target="_blank">View Press Release</a>
-  </section>
+<!-- Blogs -->
+<section id="blogs" class="fade-in">
+  <h2>Latest Blogs</h2>
+  <ul id="blog-list"><li>Loading latest posts...</li></ul>
+</section>
 
-  <!-- Blogs -->
-  <section id="blogs" class="fade-in">
-    <h2>Featured Blogs</h2>
-    <ul>
-      <li><a href="https://eddiegravalese.wordpress.com/2025/06/20/is-eddie-gravalese-the-finance-consultant-you-need-to-know-about/" target="_blank">Is Eddie Gravalese the Finance Consultant You Need?</a></li>
-      <li><a href="https://vocal.media/journal/how-to-become-a-business-consultant-a-practical-guide-inspired-by-eddie-gravalese" target="_blank">How to Become a Business Consultant – Practical Guide</a></li>
-      <li><a href="https://medium.com/@eddiegravalesee/how-much-do-real-estate-consultants-charge-insights-from-eddie-gravalese-31411c6dc8d8" target="_blank">Real Estate Consultant Fees Explained</a></li>
-    </ul>
-  </section>
+<!-- Profiles -->
+<section id="profiles" class="fade-in">
+  <h2>Professional Profiles</h2>
+  <ul id="profile-list"><li>Loading profiles...</li></ul>
+</section>
 
-  <!-- Profiles -->
-  <section id="profiles" class="fade-in">
-    <h2>Professional Profiles</h2>
-    <ul>
-      <li><a href="https://about.me/eddiegravalese" target="_blank">About.Me</a></li>
-      <li><a href="https://speakerdeck.com/eddiegravalese" target="_blank">SpeakerDeck</a></li>
-      <li><a href="https://github.com/eddiegravalese" target="_blank">GitHub</a></li>
-      <li><a href="https://www.behance.net/eddiegravalese" target="_blank">Behance</a></li>
-      <li><a href="https://www.linkedin.com/in/eddiegravalese" target="_blank">LinkedIn</a></li>
-      <li><a href="https://www.kickstarter.com/profile/eddiegravalese/about" target="_blank">Kickstarter</a></li>
-    </ul>
-  </section>
+<!-- Testimonials -->
+<section id="testimonials" class="fade-in">
+  <h2>Testimonials</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial-card"><p>"Eddie’s expertise transformed our financial strategy. Highly recommended!"</p><h4>- Jane D., Entrepreneur</h4></div>
+    <div class="testimonial-card"><p>"Exceptional guidance on real estate investments. Our portfolio has grown exponentially."</p><h4>- Michael S., Investor</h4></div>
+    <div class="testimonial-card"><p>"Professional, ethical, and results-driven. Eddie is the real deal."</p><h4>- Sarah K., Business Owner</h4></div>
+  </div>
+</section>
 
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="testimonial-slider">
-      <div class="testimonial-card">
-        <p>"Eddie’s expertise transformed our financial strategy. Highly recommended!"</p>
-        <h4>- Jane D., Entrepreneur</h4>
-      </div>
-      <div class="testimonial-card">
-        <p>"Exceptional guidance on real estate investments. Our portfolio has grown exponentially."</p>
-        <h4>- Michael S., Investor</h4>
-      </div>
-      <div class="testimonial-card">
-        <p>"Professional, ethical, and results-driven. Eddie is the real deal."</p>
-        <h4>- Sarah K., Business Owner</h4>
-      </div>
-    </div>
-  </section>
+<!-- Contact -->
+<section id="contact" class="fade-in">
+  <h2>Contact</h2>
+  <p><strong>Email:</strong> <a href="mailto:info@eddiegravalese.com">info@eddiegravalese.com</a></p>
+  <p><strong>Website:</strong> <a href="https://eddiegravalese.com" target="_blank">eddiegravalese.com</a></p>
+  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/eddiegravalese" target="_blank">linkedin.com/in/eddiegravalese</a></p>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="fade-in">
-    <h2>Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:info@eddiegravalese.com">info@eddiegravalese.com</a></p>
-    <p><strong>Website:</strong> <a href="https://eddiegravalese.com" target="_blank">eddiegravalese.com</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/eddiegravalese" target="_blank">linkedin.com/in/eddiegravalese</a></p>
-  </section>
+<!-- Footer -->
+<footer>
+  <p>© 2025 Eddie Gravalese | All Rights Reserved | <a href="https://eddiegravalese.com" target="_blank">Official Website</a></p>
+</footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Eddie Gravalese | All Rights Reserved | <a href="https://eddiegravalese.com" target="_blank">Official Website</a></p>
-  </footer>
+<script>
+  // Hero Slider
+  const slides = document.querySelectorAll('.slide');
+  const buttons = document.querySelectorAll('.slider-nav button');
+  let current = 0;
+  function showSlide(index){
+    slides.forEach((slide,i)=>slide.classList.toggle('active', i===index));
+    buttons.forEach((btn,i)=>btn.classList.toggle('active', i===index));
+    current = index;
+  }
+  buttons.forEach((btn,i)=>btn.addEventListener('click',()=>showSlide(i)));
+  setInterval(()=>{ showSlide((current+1)%slides.length); },8000);
 
-  <script>
-    // Hero Slider
-    const slides = document.querySelectorAll('.slide');
-    const buttons = document.querySelectorAll('.slider-nav button');
-    let current = 0;
+  // Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = {threshold:0.2};
+  const appearOnScroll = new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  },appearOptions);
+  faders.forEach(fader=>appearOnScroll.observe(fader));
 
-    function showSlide(index){
-      slides.forEach((slide,i)=>slide.classList.toggle('active', i===index));
-      buttons.forEach((btn,i)=>btn.classList.toggle('active', i===index));
-      current = index;
+  // Dynamic Blogs Feed
+  async function fetchRSS(url){ const res=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`); const data=await res.json(); return data.items; }
+  async function loadBlogs(){
+    const blogList=document.getElementById('blog-list'); blogList.innerHTML='';
+    const feeds=['https://eddiegravalese.wordpress.com/feed/','https://eddiegravalesee.blogspot.com/feeds/posts/default?alt=rss','https://medium.com/feed/@eddiegravalesee','https://vocal.media/journal/feed'];
+    for(const feed of feeds){
+      try{
+        const posts=await fetchRSS(feed);
+        posts.slice(0,3).forEach(post=>{
+          const li=document.createElement('li');
+          li.innerHTML=`<a href="${post.link}" target="_blank">${post.title}</a>`;
+          blogList.appendChild(li);
+        });
+      }catch(e){ console.warn('Failed to load feed',feed,e); }
     }
+  }
+  loadBlogs();
 
-    buttons.forEach((btn,i)=>btn.addEventListener('click',()=>showSlide(i)));
+  // Dynamic Profiles Feed
+  const profiles=[
+    {name:"GitHub", url:"https://github.com/eddiegravalese", api:"https://api.github.com/users/eddiegravalese", icon:"fab fa-github"},
+    {name:"Behance", url:"https://www.behance.net/eddiegravalese", api:"https://www.behance.net/v2/users/eddiegravalese?api_key=YOUR_API_KEY", icon:"fab fa-behance"},
+    {name:"Medium", url:"https://medium.com/@eddiegravalesee", api:"https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@eddiegravalesee", icon:"fab fa-medium"},
+    {name:"SpeakerDeck", url:"https://speakerdeck.com/eddiegravalese", icon:"fas fa-chalkboard"},
+    {name:"LinkedIn", url:"https://www.linkedin.com/in/eddiegravalese", icon:"fab fa-linkedin"},
+    {name:"Kickstarter", url:"https://www.kickstarter.com/profile/eddiegravalese/about", icon:"fab fa-kickstarter"}
+  ];
+  const profileList=document.getElementById('profile-list'); profileList.innerHTML='';
+  profiles.forEach(async profile=>{
+    let countText='';
+    try{
+      if(profile.api){
+        const res=await fetch(profile.api);
+        const data=await res.json();
+        if(profile.name==="GitHub"){ countText=` - ${data.followers} followers`; }
+        else if(profile.name==="Behance" && data.user){ countText=` - ${data.user.stats.followers} followers`; }
+        else if(profile.name==="Medium" && data.items){ countText=` - ${data.items.length} recent posts`; }
+      }
+    }catch(e){ console.warn("Could not fetch data for",profile.name,e); }
+    const li=document.createElement('li');
+    li.innerHTML=`<a href="${profile.url}" target="_blank"><i class="${profile.icon}"></i> ${profile.name}${countText}</a>`;
+    profileList.appendChild(li);
+  });
+</script>
 
-    setInterval(()=>{
-      let next = (current+1)%slides.length;
-      showSlide(next);
-    },8000);
-
-    // Fade-in on scroll
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {threshold:0.2};
-    const appearOnScroll = new IntersectionObserver((entries,observer)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },appearOptions);
-    faders.forEach(fader=>appearOnScroll.observe(fader));
-  </script>
 </body>
 </html>
