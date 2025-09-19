@@ -8,54 +8,90 @@
 <meta name="author" content="Eddie Gravalese">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
-body {margin:0;font-family:'Segoe UI',sans-serif;background:#f9fafc;color:#333;line-height:1.6;}
-header {background:#1a2537;color:white;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;}
-header img {height:50px;margin-right:10px;border-radius:8px;}
-header h1 {margin:0;font-size:1.5rem;}
-nav a {color:white;margin-left:15px;font-weight:bold;text-decoration:none;}
+/* --- Global Styles --- */
+body {margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa;color:#333;line-height:1.7;}
+h1,h2,h3 {font-family:'Segoe UI Semibold',sans-serif;}
+a {text-decoration:none;color:#0066cc;}
+a:hover {color:#ff9900;}
+
+/* --- Header --- */
+header {background:linear-gradient(90deg,#1a2537,#2e3b55);color:white;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+header img {height:55px;margin-right:10px;border-radius:8px;}
+header h1 {margin:0;font-size:1.7rem;}
+nav {margin-top:10px;}
+nav a {color:white;margin-left:18px;font-weight:500;}
 nav a:hover {color:#ffcc00;}
-section {padding:50px 20px;max-width:1000px;margin:auto;}
-h2 {color:#1a2537;margin-bottom:15px;border-bottom:2px solid #ffcc00;display:inline-block;padding-bottom:5px;}
-.services-grid, .listings-grid, .social-icons, .blogs-list {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;}
-.service-card, .listing-card {background:white;padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
-.social-icons a {font-size:1.5rem;color:#1a2537;margin-right:10px;}
-.social-icons a:hover {color:#ffcc00;}
-ul {padding-left:20px;}
-footer {background:#1a2537;color:white;text-align:center;padding:20px;}
-footer a {color:#ffcc00;text-decoration:none;}
+
+/* --- Sections --- */
+section {padding:60px 20px;max-width:1100px;margin:auto;}
+h2 {color:#1a2537;font-size:1.8rem;margin-bottom:20px;position:relative;}
+h2::after {content:"";display:block;width:60px;height:3px;background:#ffcc00;margin-top:8px;}
+
+/* --- Services & Listings --- */
+.services-grid, .listings-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.service-card, .listing-card {background:white;padding:25px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.08);transition:transform 0.2s ease;}
+.service-card:hover, .listing-card:hover {transform:translateY(-5px);}
+.service-card h3 {margin-top:0;color:#0066cc;}
+
+/* --- Blogs --- */
+.blogs-list li {margin:10px 0;list-style:none;padding:12px 15px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+.blogs-list a {font-weight:500;}
+
+/* --- Social Icons --- */
+.social-icons a {font-size:1.6rem;color:#1a2537;margin-right:15px;transition:color 0.3s;}
+.social-icons a:hover {color:#ff9900;}
+
+/* --- Press Release --- */
+#press {background:#fffbe6;border-left:5px solid #ffcc00;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+#press p {margin:10px 0;}
+
+/* --- Contact --- */
+#contact p {margin:8px 0;}
+#contact a {color:#0066cc;font-weight:500;}
+#contact a:hover {color:#ff9900;}
+
+/* --- Footer --- */
+footer {background:#1a2537;color:white;text-align:center;padding:25px;margin-top:40px;}
+footer a {color:#ffcc00;}
 footer a:hover {text-decoration:underline;}
+
+/* --- Responsive --- */
+@media(max-width:768px){
+header {flex-direction:column;text-align:center;}
+nav {margin-top:10px;}
+}
 </style>
 </head>
 <body>
 
 <header>
-<div style="display:flex;align-items:center;">
-<img src="https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg" alt="Eddie Gravalese Logo">
-<h1>Eddie Gravalese</h1>
-</div>
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#blogs">Blogs</a>
-<a href="#profiles">Profiles</a>
-<a href="#listings">Listings</a>
-<a href="#press">Press</a>
-<a href="#contact">Contact</a>
-</nav>
+  <div style="display:flex;align-items:center;flex-wrap:wrap;">
+    <img src="https://img1.wsimg.com/isteam/ip/cca9164f-ba6b-49b4-bbe3-80b468d9e82e/Screenshot%202025-06-16%20at%204.25.01%E2%80%AFPM.jpeg" alt="Eddie Gravalese Logo">
+    <h1>Eddie Gravalese</h1>
+  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#blogs">Blogs</a>
+    <a href="#profiles">Profiles</a>
+    <a href="#listings">Listings</a>
+    <a href="#press">Press</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section id="about">
 <h2>About Me</h2>
-<p>I’m Eddie Gravalese, a finance and real estate expert with over 20 years of experience. I help entrepreneurs, investors, and professionals achieve sustainable growth with financial planning, real estate solutions, and strategic business consulting grounded in ethical practices.</p>
+<p>I’m Eddie Gravalese, a finance and real estate expert with 20+ years of experience. I help entrepreneurs, investors, and professionals achieve sustainable growth through tailored financial planning, real estate solutions, and strategic consulting rooted in ethical practices.</p>
 </section>
 
 <section id="services">
 <h2>Services</h2>
 <div class="services-grid">
-<div class="service-card"><h3>Strategic Financial Planning</h3><p>Optimize investments, reduce risks, and achieve long-term business goals.</p></div>
-<div class="service-card"><h3>Real Estate Consulting</h3><p>Guidance for property acquisition, development, and management.</p></div>
-<div class="service-card"><h3>Flexible Lending Solutions</h3><p>Financing tailored for startups, property, and business expansion.</p></div>
-<div class="service-card"><h3>Business Growth Advisory</h3><p>Support for scaling operations, improving cash flow, and building sustainable businesses.</p></div>
+<div class="service-card"><h3>Strategic Financial Planning</h3><p>Helping clients optimize investments, reduce risks, and build long-term stability.</p></div>
+<div class="service-card"><h3>Real Estate Consulting</h3><p>Expert advice on property acquisition, development, and management strategies.</p></div>
+<div class="service-card"><h3>Flexible Lending Solutions</h3><p>Custom financing solutions for startups, real estate projects, and expansions.</p></div>
+<div class="service-card"><h3>Business Growth Advisory</h3><p>Guidance on scaling operations, improving cash flow, and sustainable growth.</p></div>
 </div>
 </section>
 
@@ -65,7 +101,7 @@ footer a:hover {text-decoration:underline;}
 <li><a href="https://eddiegravalese.wordpress.com/2025/06/20/is-eddie-gravalese-the-finance-consultant-you-need-to-know-about/" target="_blank">Is Eddie Gravalese the Finance Consultant You Need?</a></li>
 <li><a href="https://eddiegravalesee.blogspot.com/2025/06/what-makes-eddie-gravalese-trusted.html" target="_blank">What Makes Eddie Gravalese Trusted?</a></li>
 <li><a href="https://eddiegravalese.wordpress.com/2025/07/01/how-much-do-real-estate-consultants-charge-eddie-gravalese-explains/" target="_blank">How Much Do Real Estate Consultants Charge?</a></li>
-<li><a href="https://eddiegravalese.wordpress.com/2025/09/05/eddie-gravalese-elevating-finance-consulting-with-integrity-strategy-community-impact/" target="_blank">Eddie Gravalese: Elevating Finance Consulting</a></li>
+<li><a href="https://eddiegravalese.wordpress.com/2025/09/05/eddie-gravalese-elevating-finance-consulting-with-integrity-strategy-community-impact/" target="_blank">Elevating Finance Consulting with Integrity</a></li>
 </ul>
 </section>
 
@@ -85,23 +121,23 @@ footer a:hover {text-decoration:underline;}
 <h2>Business Listings & Guest Posts</h2>
 <div class="listings-grid">
 <div class="listing-card"><a href="https://bizpages.org/business--United-States--Lynnfield--55670" target="_blank">BizPages Listing</a></div>
-<div class="listing-card"><a href="https://www.urbansplatter.com/2025/07/eddie-gravalese-building-real-growth-in-finance-business-real-estate/" target="_blank">Guest Post: Urban Splatter</a></div>
-<div class="listing-card"><a href="https://www.apsense.com/article/855815-what-is-business-consulting-services-a-complete-guide-with-insights.html" target="_blank">Guest Post: Apsense</a></div>
+<div class="listing-card"><a href="https://www.urbansplatter.com/2025/07/eddie-gravalese-building-real-growth-in-finance-business-real-estate/" target="_blank">Urban Splatter Guest Post</a></div>
+<div class="listing-card"><a href="https://www.apsense.com/article/855815-what-is-business-consulting-services-a-complete-guide-with-insights.html" target="_blank">Apsense Guest Post</a></div>
 <div class="listing-card"><a href="https://www.trustpilot.com/review/eddiegravalese.com" target="_blank">TrustPilot Reviews</a></div>
 </div>
 </section>
 
 <section id="press">
 <h2>Press Release</h2>
-<p>Eddie Gravalese has announced new client-focused services for entrepreneurs, real estate professionals, and investors. These offerings include strategic financial planning, flexible lending, and real estate consulting to promote sustainable growth.</p>
-<p>Read full press release: <a href="https://github.com/eddiegravalese/Eddie-Gravalese/releases/tag/v1.0.0" target="_blank">v1.0.0 Press Release</a></p>
+<p><strong>Eddie Gravalese</strong> has announced new client-focused services for entrepreneurs, real estate professionals, and investors. These services include financial planning, lending solutions, and real estate consulting designed to promote sustainable growth.</p>
+<p>Read the full announcement here: <a href="https://github.com/eddiegravalese/Eddie-Gravalese/releases/tag/v1.0.0" target="_blank">v1.0.0 Press Release</a></p>
 </section>
 
 <section id="contact">
 <h2>Contact</h2>
-<p>Email: <a href="mailto:info@eddiegravalese.com">info@eddiegravalese.com</a></p>
-<p>Website: <a href="https://eddiegravalese.com" target="_blank">eddiegravalese.com</a></p>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/eddie-gravalese/" target="_blank">linkedin.com/in/eddie-gravalese</a></p>
+<p><strong>Email:</strong> <a href="mailto:info@eddiegravalese.com">info@eddiegravalese.com</a></p>
+<p><strong>Website:</strong> <a href="https://eddiegravalese.com" target="_blank">eddiegravalese.com</a></p>
+<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/eddie-gravalese/" target="_blank">linkedin.com/in/eddie-gravalese</a></p>
 </section>
 
 <footer>
